@@ -1,0 +1,32 @@
+<!--pages/songlist/songlist.wxml-->
+<view class="searchBox">
+    <input class="txt" type="text" placeholder="陈奕迅孤勇者" bindinput="changeWord"></input>
+    <view class="btn" bindtap="search">
+        <image src="/images/搜索按钮.png"></image>
+    </view>
+</view>
+<!-- 轮播-->
+<swiper class="banner" indicator-dots="true" indicator-active-color="#00FA9A" autoplay="true" interval="3000" circular="true" duration="2000">
+        <block wx:for="{{bannerList}}" wx:key="*this">
+          <swiper-item>
+            <image src="{{item.pic}}"></image>
+          </swiper-item>
+        </block>
+</swiper>
+<!--热门歌曲列表-->
+<block wx:for="{{resultmusiclist}}" wx:key="this" wx:for-index="i">
+    <view class="musicbox">
+    <view class="imgbox">
+        <image src="{{musicPiclist[i]}}"></image>
+    </view>
+    <view class="contentbox">
+        <text class="mname">{{item.name}}</text>
+        <text class="name">{{item.artists[0].name}}</text>
+    </view>
+    <view class="btnbox">
+    <!--bindtap进行单击触发-->
+        <image data-id="{{item.id}}" bindtap="play" src="/images/24gl-play.png"></image>
+    </view>
+</view>
+</block>
+

@@ -1,0 +1,15 @@
+/* page/video/video.wxss */
+/*nav 导航*/
+ .navScroll{
+    display: flex;
+    white-space: nowrap;
+    height: 70rpx;
+}
+ .navScroll .navItem{
+    padding: 0 30rpx;
+    font-size: 28rpx;
+    line-height: 60rpx;
+}
+.navScroll .navItem .active{
+    border-bottom: 1px solid #00FA9A;
+}

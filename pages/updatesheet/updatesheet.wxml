@@ -1,0 +1,16 @@
+
+<view class="container">
+  <view class="wrapper">
+    <view class="left-top-sign">UPDATA</view>
+    <view class="welcome">
+      欢迎！
+    </view>
+    <view class="input-content">
+      <view class="input-item">
+        <text class="tit">歌单名</text>
+        <input  type="text" value="{{gename}}" bindinput="updName" data-test="abc" data-type="phone" id="phone" />
+      </view>
+    </view>
+    <button class="confirm-btn" bindtap="updData">修改歌单</button>
+  </view>
+</view>

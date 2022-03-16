@@ -1,0 +1,39 @@
+<!--pages/play/play.wxml-->
+<image  class="bgimg" src="{{musicImage}}"></image>
+<view class="musicname">{{musicName}}</view>
+<view class="musicsinger">{{musicsinger}}</view>
+<swiper class="playbox">
+    <swiper-item class="imgbox"><image class="{{action.method=='pause'?'':'imgpause'}}imgpause"  src="{{musicImage}}"></image>
+    </swiper-item>
+    <swiper-item class="lrcbox">
+    <scroll-view scroll-y="false" scroll-top="{{top}}">
+    <!--wx:for-index="in"在歌词遍历的时候进行下标的定义-->
+    <block wx:for="{{LrcData}}" wx:key="this" wx:for-index="in">
+        <view class="{{in==lrcindex?'color':''}}">{{item[1]}}</view>
+    </block>
+    
+    </scroll-view>
+    </swiper-item>
+</swiper>
+<!-- 进度条box -->
+<view class="timebox">
+    <!--  -->
+    <view class="play_time">{{playtime}}</view>
+    <slider block-size="16" activeColor="#31c27c" value="{{move}}" max="{{max}}" bindchange="sliderchange">
+    </slider>
+    <view class="end_time">{{sumtime}}</view>
+</view>
+
+<!-- 按钮box -->
+<view class="btnbox">
+    <!-- 列表/单曲循环 -->
+    <image class="btnone" bindtap="changemode" src="/images/{{mode=='loop'?'all':'one'}}.png"></image>
+    <!-- 上一首 -->
+    <image class="btnlast" bindtap="prevSong" src="/images/上一首.png"></image>
+    <!--播放按钮-->
+    <image class="btnplay" bindtap="playdate" src="/images/{{action.method=='play'?'pause':'play'}}.png"></image>
+    <!-- 下一首 -->
+    <image class="btnnext" bindtap="nextSong" src="/images/下一首.png"></image>
+</view>
+
+<audio bindended="changeMusic" bindtimeupdate="timechange" action="{{action}}"  src="http://music.163.com/song/media/outer/url?id={{thismusicid}}.mp3" ></audio>

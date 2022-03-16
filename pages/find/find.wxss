@@ -1,0 +1,158 @@
+/* pages/find/find.wxss */
+page{
+    background-color: rgb(246, 255, 246);
+}
+.searchBox
+{
+    width: 90%;
+    height: 70rpx;
+    background-color: #e6e6e6;
+    margin: 15rpx auto;
+    border-radius: 60rpx;
+    overflow: hidden;
+}
+.searchBox .txt{
+    width: 68%;
+    height: 70rpx;
+    float: left;
+    padding-top: 15rpx;
+    padding-left: 100rpx;
+    font-size: 30rpx;
+    text-align: center;
+}
+.searchBox .btn
+{
+    width: 100rpx;
+    height: 70rpx;
+    float: right;
+    position: relative;
+}
+
+.searchBox .btn image{
+    width: 40rpx;
+    height: 40rpx;
+    position: absolute;
+    top: 0;left: 0;bottom: 0;right: 0;
+    margin: auto;
+}
+
+.main{
+    width: 90%;
+    height: 400rpx;
+    /* background-color: pink; */
+    margin: 15rpx auto;
+    padding-bottom: 50rpx;
+}
+
+.clearfix::after{
+    content: ".";
+    display: block;
+    height: 0;
+    visibility: hidden;
+    overflow: hidden;
+    clear: both;
+}
+.main .top{
+    height: 60rpx;
+    /* background-color: blue; */
+    padding-top: 30rpx;
+}
+.top view{
+    font-size: 30rpx;
+    line-height: 30rpx;
+    padding: 5rpx 20rpx;
+}
+.top .tit_l
+{
+    float:left;
+    padding-left: 0rpx;
+}
+.top .tit_r
+{
+    float: right;
+    /* border: 1px solid #747474; */
+    color: #747474;
+    border-radius: 10rpx;
+}
+
+/* 推荐歌曲 */
+.recommendContainer {
+    padding: 20rpx;
+  }
+  
+  /* 推荐内容区*/
+  .recommendScroll {
+    display: flex;
+    height: 300rpx;
+  }
+  .scrollItem {
+    width: 200rpx;
+    margin-right: 20rpx;
+  
+  }
+  
+  .scrollItem image {
+    width: 200rpx;
+    height: 200rpx;
+    border-radius: 10rpx;
+  
+  }
+  
+  .scrollItem text {
+    font-size: 26rpx;
+  
+    /* 多行文本溢出隐藏 省略号代替*/
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical; /*设置对其模式*/
+    -webkit-line-clamp: 2; /*设置多行的行数*/
+  }
+  
+  
+  /* 排行榜  */
+  .topList {
+    padding: 20rpx;
+  }
+  
+  .topListSwiper {
+    height: 400rpx;
+  }
+  
+  .swiperItem {
+    width: 96%;
+    background: #fbfbfb;
+  }
+  .swiperItem .title {
+    font-size: 30rpx;
+    line-height: 80rpx;
+  
+  }
+  
+  .musicItem {
+    /* 当一个元素设置为flex，其子元素会自动成为block元素*/
+    display: flex;
+    margin-bottom: 20rpx;
+  }
+  
+  .musicItem image{
+    width: 100rpx;
+    height: 100rpx;
+    border-radius: 6rpx;
+  }
+  
+  .musicItem .count {
+    width: 100rpx;
+    height: 100rpx;
+    text-align: center;
+    line-height: 100rpx;
+  }
+  
+  .musicItem .musicName {
+    height: 100rpx;
+    line-height: 100rpx;
+    max-width: 400rpx;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }

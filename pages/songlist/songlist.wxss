@@ -1,0 +1,105 @@
+/* pages/songlist/songlist.wxss */
+page{
+    background-color: rgb(246, 255, 246);
+}
+.searchBox
+{
+    width: 90%;
+    height: 70rpx;
+    background-color: #e6e6e6;
+    margin: 15rpx auto;
+    border-radius: 60rpx;
+    overflow: hidden;
+}
+.searchBox .txt{
+    width: 68%;
+    height: 70rpx;
+    float: left;
+    padding-left: 50rpx;
+    font-size: 25rpx;
+}
+.searchBox .btn
+{
+    width: 100rpx;
+    height: 70rpx;
+    float: right;
+    position: relative;
+}
+
+.searchBox .btn image{
+    width: 40rpx;
+    height: 40rpx;
+    position: absolute;
+    top: 0;left: 0;bottom: 0;right: 0;
+    margin: auto;
+}
+
+.banner{
+    width: 90%;
+    height: 300rpx;
+    margin: 15rpx auto;
+}
+.banner image{
+    display: block;
+    width: 100%;
+    height: 300rpx;
+    border-radius: 20rpx;
+}
+
+/* 歌曲列表 */
+.musicbox
+{
+    width: 90%;
+    height: 130rpx;
+    /* background-color: pink; */
+    margin: 15rpx auto;
+}
+.musicbox view{
+    float: left;
+}
+.musicbox .imgbox{
+    width: 130rpx;
+    height: 130rpx;
+    position: relative;
+}
+.imgbox image{
+    width: 130rpx;
+    height: 130rpx;
+    display: block;
+    border-radius: 10rpx;
+}
+
+.contentbox{
+    width: 45%;
+    height: 130rpx;
+    /* background-color: orange; */
+    padding-left: 100rpx;
+}
+.contentbox text{
+    display: block;
+}
+.contentbox .mname{
+    font-size: 35rpx;
+    height: 60rpx;
+    line-height: 60rpx;
+    font-weight:bold;
+}
+.contentbox .name{
+    height: 50rpx;
+    line-height: 50rpx;
+    font-size: 25rpx;
+    color: rgb(110, 110, 110);
+}
+.btnbox{
+    width: 130rpx;
+    height: 130rpx;
+    position: relative;
+}
+.btnbox image{
+    width: 70rpx;
+    height: 70rpx;
+    position: absolute;
+    left: 0; top: 0;
+    bottom: 0; right: 0;
+    margin: auto;
+}

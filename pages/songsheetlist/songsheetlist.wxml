@@ -1,0 +1,30 @@
+<view class="songsheetlist">
+    <!-- 头部 -->
+    <view class="header">
+        <image src="/static/images/recommendSong/recommendSong.jpg"></image>
+        <view class="date">
+            <text class="day">我的歌单</text>
+        </view>
+    </view>
+
+    <!-- 歌单列表 -->
+    <view class="ListContainer">
+        <view class="listHeader">
+            <text>播放全部</text>
+            <image class="changeMore" src="/images/新增.png" bindtap="insertlist"></image>
+        </view>
+        <!-- 内容区 -->
+        <scroll-view scroll-y class="listScroll">
+            <view class="scrollItem" wx:for="{{datalist}}">
+                <image src="/images/搜索音乐.png"></image>
+                <view class="musicInfo">
+                    <text class="musicName">{{item.name}}</text>
+                    <!-- <text class="author">{{sum[i]}}首</text> -->
+                </view>
+                <image data-id="{{item._id}}" class="iconfonta" src="/images/详情.png" bindtap="sheetlist"></image>
+                <image data-id="{{item._id}}" class="iconfontb" src="/images/编辑.png" bindtap="updatelist"></image>
+                <image data-id="{{item._id}}" class="iconfont" src="/images/删除.png" bindtap="deletelist" ></image>
+            </view>
+        </scroll-view>
+    </view>
+</view>

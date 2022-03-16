@@ -1,0 +1,16 @@
+
+<view class="container">
+  <view class="wrapper">
+    <view class="left-top-sign">INSERT</view>
+    <view class="welcome">
+      欢迎！
+    </view>
+    <view class="input-content">
+      <view class="input-item">
+        <text class="tit">歌单名</text>
+        <input  type="text" placeholder="请输入歌单名" data-test="abc" data-type="phone" id="phone" bindinput="addName"/>
+      </view>
+    </view>
+    <button class="confirm-btn" bindtap="addData">添加歌单</button>
+  </view>
+</view>

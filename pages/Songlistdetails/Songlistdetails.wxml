@@ -1,0 +1,27 @@
+<view class="songsheetlist">
+    <!-- 头部 -->
+    <view class="header">
+        <image src="/static/images/recommendSong/recommendSong.jpg"></image>
+        <view class="date">
+            <text class="day">歌单详情</text>
+        </view>
+    </view>
+
+    <!-- 歌单列表 -->
+    <view class="ListContainer">
+        <view class="listHeader">
+            <text>{{gename}}</text>
+        </view>
+        <!-- 内容区 -->
+        <scroll-view scroll-y class="listScroll">
+            <view class="scrollItem" wx:for="{{resultList}}" wx:for-index="i">
+                <image src="{{item.al.picUrl}}"></image>
+                <view class="musicInfo">
+                    <text class="musicName">{{item.name}}</text>
+                    <text class="author">{{item.ar[0].name}}</text>
+                </view>
+                <image data-id="{{item.id}}" class="iconfont" src="/images/播放器.png" bindtap="play"></image>
+            </view>
+        </scroll-view>
+    </view>
+</view>
