@@ -1,6 +1,6 @@
 <!--pages/songlist/songlist.wxml-->
 <view class="searchBox">
-    <input class="txt" type="text" placeholder="陈奕迅孤勇者" bindinput="changeWord"></input>
+    <input class="txt" type="text" placeholder="邓紫棋" bindinput="changeWord"></input>
     <view class="btn" bindtap="search">
         <image src="/images/搜索按钮.png"></image>
     </view>
@@ -13,20 +13,35 @@
           </swiper-item>
         </block>
 </swiper>
+
+<view class="cover-container">
+    <!-- 个人中心导航 -->
+    <view class="nav-section">
+      <view class="nav-item" bindtap="recommendSong">
+        <image src="../../images/推荐.png"></image>
+        <text>每日推荐</text>
+      </view>
+      <view class="nav-item" bindtap="hotsheetlist" >
+        <image src="../../images/热门.png"></image>
+        <text>最热歌曲</text>
+      </view>
+    </view>
+</view>
+
 <!--热门歌曲列表-->
 <block wx:for="{{resultmusiclist}}" wx:key="this" wx:for-index="i">
     <view class="musicbox">
-    <view class="imgbox">
-        <image src="{{musicPiclist[i]}}"></image>
+        <view class="imgbox">
+            <image src="{{musicPiclist[i]}}"></image>
+        </view>
+        <view class="contentbox">
+            <text class="mname">{{item.name}}</text>
+            <text class="name">{{item.artists[0].name}}</text>
+        </view>
+        <view class="btnbox">
+        <!--bindtap进行单击触发-->
+            <image data-id="{{item.id}}" bindtap="play" src="/images/24gl-play.png"></image>
+        </view>
     </view>
-    <view class="contentbox">
-        <text class="mname">{{item.name}}</text>
-        <text class="name">{{item.artists[0].name}}</text>
-    </view>
-    <view class="btnbox">
-    <!--bindtap进行单击触发-->
-        <image data-id="{{item.id}}" bindtap="play" src="/images/24gl-play.png"></image>
-    </view>
-</view>
 </block>
 

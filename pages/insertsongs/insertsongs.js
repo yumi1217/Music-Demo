@@ -44,12 +44,11 @@ Page({
         this.getSearchList();
       },
 
-    //跳转到播放界面
-        async play (even) {
+    //添加歌曲到gequ集合
+        play (even) {
         // console.log(even)
         let mid=even.currentTarget.dataset.id
         let name = this.data.gename
-        console.log(name)
         DA.add({
             data:{
               name:name,

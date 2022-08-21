@@ -154,9 +154,15 @@
 
 }
 
+.nav-section .nav-item image {
+  width: 60rpx;
+  height: 60rpx;
+}
+
 /* 个人中心列表 */
 .personalContent {
   background: #fff;
+  border-radius: 16rpx;
   margin-top: 20rpx;
 }
 
@@ -179,6 +185,7 @@
 
 .logout-btn {
   margin-top: 5rpx;
+  border-radius: 16rpx;
   background-color: #00FA9A;
   color: white;
 }

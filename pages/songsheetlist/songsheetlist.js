@@ -1,17 +1,15 @@
 // pages/songsheetlist/songsheetlist.js
 let DB=wx.cloud.database().collection("gedan")
-let DA=wx.cloud.database().collection("gequ")
 Page({
 
     /**
      * 页面的初始数据
      */
     data: {
-        dataList:[], //获取数据库里面的数据
-        sum:[]
+        datalist:[], //获取数据库里面的数据
     },
 
-    // //查询有多少首歌的方法
+    // 查询有多少首歌的函数
     // select:function(){
     //     var datalist = []
     //     var sum = []
@@ -47,7 +45,7 @@ Page({
     //     })
     // },
 
-    //歌单详情跳转
+    //跳转到歌单详情页面
     sheetlist:function(even){
         var mid=even.currentTarget.dataset.id
         wx.navigateTo({
@@ -65,11 +63,11 @@ Page({
 
     //删除歌单方法
     deletelist:function(even){
+        var mid=even.currentTarget.dataset.id
         wx.showModal({
             content: '确定要删除此歌单吗？',
             success: (res) => {
-                var mid=even.currentTarget.dataset.id
-                // console.log(even)
+                if(res.confirm){
                 DB.doc(mid).remove({
                     success(res){
                         // console.log("删除成功",res)
@@ -81,11 +79,12 @@ Page({
                         console.log("删除失败",res)
                     }
                 })
+                }else{
+                    return;
+                }
             }
         })
     },
-
-    
 
     //修改歌单方法
     updatelist:function(even){
@@ -97,7 +96,7 @@ Page({
         })
     },
 
-    //页面渲染调用方法
+    //查询数据库函数
     load(){
         let that = this
         DB.get({
@@ -113,14 +112,12 @@ Page({
         })
     },
 
-    //查询方法
-
     /**
      * 生命周期函数--监听页面加载
      */
     onLoad: function (options) {
+        //调用查询数据库数据封装函数
         this.load()
-        // this.select()
     },
 
     /**

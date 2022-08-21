@@ -10,7 +10,7 @@ Page({
       phone: '17683819202', // 手机号
       password: 'Lr991217' // 用户密码
     },
-
+    //微信授权登录
     toLogin(){
       let phone  = this.data.phone
       let password = this.data.password
@@ -33,12 +33,14 @@ Page({
         }) 
       },
 
+      //网易云音乐登录函数
       async wangyiyun(phone,password){
         // console.log(phone,password)
         let result = await request('/login/cellphone', {phone, password, isLogin: true})
         console.log(result)
       },
-
+    
+      //跳转到歌单页面函数
     songsheetlist(){
       wx.navigateTo({
         url: '/pages/songsheetlist/songsheetlist',
@@ -46,13 +48,16 @@ Page({
     },
     //退出登录
     logout(){
-      wx:wx.showModal({
+      wx.showModal({
         content: '确定要退出微信授权登录吗',
         success: (res) => {
           if(res.confirm){
             this.setData({
               userInfo:""
             })
+          }else
+          {
+            return;
           }
         },
       })

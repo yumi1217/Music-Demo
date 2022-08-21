@@ -2,10 +2,13 @@
 const db=wx.cloud.database().collection("gedan")
 let gename = ""
 Page({
+  
+    //将用户输入的值赋值给全局变量gename
     addName(event){
         gename=event.detail.value
         // console.log(gename)
-      },
+    },
+
     //添加数据
   addData(){
     db.add({
@@ -23,6 +26,7 @@ Page({
       }
     })
   },
+
     /**
      * 生命周期函数--监听页面加载
      */

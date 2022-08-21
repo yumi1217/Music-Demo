@@ -5,13 +5,13 @@ Page({
      * 页面的初始数据
      */
     data: {
-        action:{
+        action:{             //播放状态
             "method":"play"  //两个值播放(play)/暂停(pause)
         },
-        thismusicid:"",
-        musicName:"",
-        musicImage:"",
-        musicsinger:"",
+        thismusicid:"",     //当前歌曲id
+        musicName:"",       //歌曲名
+        musicImage:"",      //歌曲照片
+        musicsinger:"",     //歌手名
 
         //歌词数据
         LrcDate:[],
@@ -30,7 +30,9 @@ Page({
         //歌曲列表
         idlist:[],
         //播放模式
-        mode:'loop'
+        mode:'loop',
+        //我喜欢
+        love:'false'
     },
 
     /**
@@ -83,7 +85,6 @@ Page({
        var url="http://music.163.com/api/song/lyric?os=pc&id="+id+"&lv=-1&kv=-1&tv=-1"
        wx.request({
          url: url,
-
          success: (result) => {
              var lrcStr=result.data.lrc.lyric
              //1.进行字符串拆分，把每一句拆开
@@ -248,12 +249,10 @@ Page({
                 break
             }
         }
-        //更新歌曲 ，覆盖当前id
-        //三元运算符判断当前歌曲是不是最后一首歌,如果是最后一首歌就回到第一首
         this.setData({
-            thismusicid:index==ids.length-1?0:ids[index+1]
+            thismusicid:index==ids.length-1?ids[0]:ids[index+1]
         })
-        //重新进行赋值action
+        // 重新进行赋值action
         this.setData({
             action:{
                 "method":"play"
@@ -268,32 +267,25 @@ Page({
 
     //上一首
     prevSong:function () {
-        // console.log("下一首")
-        //思路：通过id列表进行下一首的替换(1.图片 2.名称 3.歌词)
-        //拿到id列表
         var ids=this.data.idlist
-        //获取当前id
         var id=this.data.thismusicid
         //判断当前歌曲的位置
         var index=-1
         for(var i=0;i<ids.length;i++){
             if(ids[i]==id){
                 index=i;
-                break
+                break;
             }
         }
-        //更新歌曲 ，覆盖当前id
-        //三元运算符判断当前歌曲是不是最后一首歌,如果是最后一首歌就回到第一首
         this.setData({
-            thismusicid:index==0?ids[length-1]:ids[index-1]
+            thismusicid:index==0?ids[ids.length-1]:ids[index-1]
         })
-        //重新进行赋值action
+        // 重新进行赋值action
         this.setData({
             action:{
                 "method":"play"
             }
         })
-        //更新歌曲
         //歌曲详情更新
         this.musicshow()
         //歌词更新
@@ -311,6 +303,21 @@ Page({
                 mode:'loop'
             })
         }
+    },
+    //我喜欢，图标更改
+    changelove:function(){
+      var love = this.data.love
+      if(love=='false')
+      {
+        this.setData({
+            love:'true'
+        })
+      }
+      else{
+        this.setData({
+            love:'false'
+        })
+      }
     },
 
     //当歌曲播放完毕执行方法

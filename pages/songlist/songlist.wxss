@@ -34,6 +34,38 @@ page{
     margin: auto;
 }
 
+/* 导航部分 */
+.cover-container .nav-section {
+    display: flex;
+    background:rgb(246, 255, 246);
+    width: 90%;
+    padding: 20rpx 0;
+    border-radius: 15rpx;
+    margin: 15rpx auto;
+  }
+  
+  
+  .nav-section .nav-item {
+    width: 50%;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .nav-section .nav-item image {
+      width: 60rpx;
+      height: 60rpx;
+  }
+
+  .nav-section .nav-item text:last-child {
+    font-size: 25rpx;
+    color: #00FA9A;
+    /* font-size: 35rpx; */
+    height: 60rpx;
+    line-height: 60rpx;
+    font-weight:bold;
+  }
 .banner{
     width: 90%;
     height: 300rpx;

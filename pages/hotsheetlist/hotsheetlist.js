@@ -6,16 +6,18 @@ Page({
      * 页面的初始数据
      */
     data: {
-        gename:'',  //歌单名
+        id:"3778678",
+        gename:[],  //歌单名
         idList:[],   //存放歌单所有id
-        resultList:[],   //搜索结果
+        resultList:[],   //搜搜结果
+        // musicPic:[]     //歌曲照片
     },
 
     /**
      * 生命周期函数--监听页面加载
      */
     onLoad:  function (options) {
-        let id = options.id
+        let id=this.data.id
         this.sheetfun(id)
     },
 
@@ -28,7 +30,7 @@ Page({
             // musicPic:recommendListData.data.playlist.backgroundCoverUrl
         })
         // console.log(recommendListData.data.privileges)
-        for(var i=0;i<recommendListData.data.privileges.length;i++){
+        for(var i=0;i<20;i++){
             //把列表当中的id存储到新的数组当中
             idlist.push(recommendListData.data.privileges[i].id)
           }
@@ -47,7 +49,7 @@ Page({
             var result = await request('/song/detail?ids='+idlist[i])
             resultList.push(result.data.songs[0])
         }
-        console.log(resultList)
+        // console.log(resultList)
         this.setData({
           resultList:resultList
         })

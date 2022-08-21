@@ -7,7 +7,7 @@
 </view>
 
 
-
+<!-- 推荐歌单 -->
 <view class="main clearfix">
     <view class="top">
         <view class="tit_l">推荐歌单</view>
@@ -21,6 +21,9 @@
       </view>
     </scroll-view>
 </view>
+
+
+<!-- 为您精心推荐 -->
 <view class="main clearfix">
     <view class="top">
         <view class="tit_l">为你精心推荐</view>

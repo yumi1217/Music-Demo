@@ -1,18 +1,20 @@
 {
     "pages": [
-        "pages/video/video",
         "pages/songlist/songlist",
+        "pages/hotsheetlist/hotsheetlist",
+        "pages/find/find",
+        "pages/video/video",
         "pages/songsheetlist/songsheetlist",
         "pages/sheetlist/sheetlist",
         "pages/updatesheet/updatesheet",
         "pages/insertsheet/insertsheet",
         "pages/User/User",
         "pages/login/login",
-        "pages/find/find",
         "pages/search/search",
         "pages/insertsongs/insertsongs",
         "pages/play/play",
-        "pages/Songlistdetails/Songlistdetails"
+        "pages/Songlistdetails/Songlistdetails",
+        "pages/recommendSong/recommendSong"
     ],
     "window": {
         "backgroundTextStyle": "light",

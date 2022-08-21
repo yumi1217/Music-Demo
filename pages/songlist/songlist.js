@@ -7,7 +7,7 @@ Page({
      */
     data: {
         bannerList:[],
-        keyWord:"陈奕迅",
+        keyWord:"邓紫棋",
         resultmusiclist:[],
         //定义存储封面的数组
         musicPiclist:[],
@@ -94,6 +94,20 @@ Page({
             }
           }
         })
+    },
+
+    //跳转到每日推荐
+    recommendSong(){
+      wx.navigateTo({
+        url: '/pages/recommendSong/recommendSong',
+      })
+    },
+
+    //跳转到最热门歌单
+    hotsheetlist(){
+      wx.navigateTo({
+        url: '/pages/hotsheetlist/hotsheetlist',
+      })
     },
     /**
      * 生命周期函数--监听页面加载

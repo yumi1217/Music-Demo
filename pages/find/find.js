@@ -13,7 +13,7 @@ Page({
 
     //跳转至搜索界面
     btn:function (res) {
-        wx:wx.navigateTo({
+        wx.navigateTo({
           url:'/pages/search/search'
         })
     },
@@ -27,16 +27,20 @@ Page({
         this.setData({
         recommendList: recommendListData.data.result
         })
+        this.bangdan()
+    },
 
+    //为您精心推荐页面渲染
+    async bangdan(){
         let index = 0;
-        let resultArr = [];
-        let idList = [];
+        let topList = [];
         while (index < 5){
         let topListData = await request('/top/list', {idx: index++});
+        // console.log(topListData)
         let topListItem = {name: topListData.data.playlist.name, tracks: topListData.data.playlist.tracks.slice(0, 3)};
-        resultArr.push(topListItem);
+        topList.push(topListItem);
         this.setData({
-            topList: resultArr
+            topList: topList
         })
         }
     },

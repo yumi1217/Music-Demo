@@ -31,6 +31,7 @@ Page({
         })
     },
 
+    //将用户点击数据同步到表单
     toSearch(even){
         this.setData({
             searchContent: even.currentTarget.dataset.keyword
@@ -57,7 +58,7 @@ Page({
             idlist:idlist
           })
         // 页面路由
-        wx:wx.navigateTo({
+        wx.navigateTo({
             url: '/pages/play/play?id='+mid+"&idlist="+idlist
         })
     },
